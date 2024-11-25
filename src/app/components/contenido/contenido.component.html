@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="titulo">Mapa de Lugares</h1>
+    
+    <!-- Contenedor de botones -->
+    <div class="button-container">
+      <button (click)="crearLugar()" class="btn lugar">LUGAR</button>
+      <button (click)="mostrarLugar()" class="btn direccion">DIRECCION</button>
+      <button (click)="mostrarRuta()" class="btn ruta">RUTA</button>
+      <button (click)="mostrarTipo()" class="btn tipo">TIPO</button>
+      <button (click)="mostrarCiudad()" class="btn ciudad">CIUDAD</button>
+    </div>
+  
+    <!-- Resultados -->
+    <div *ngIf="mensaje" class="result-message result-info">
+      <p>{{ mensaje }}</p>
+    </div>
+    <div *ngIf="lugar" class="result-lugar result-info">
+      <p>{{ lugar }}</p>
+    </div>
+    <div *ngIf="ruta" class="result-ruta result-info">
+      <p>{{ ruta }}</p>
+    </div>
+    <div *ngIf="tipo" class="result-tipo result-info">
+      <p>{{ tipo }}</p>
+    </div>
+    <div *ngIf="ciudad" class="result-ciudad result-info">
+      <p>{{ ciudad }}</p>
+    </div>
+  
+    <!-- Botón de cancelar para borrar resultados -->
+    <div *ngIf="lugar || ruta || tipo || ciudad || mensaje" class="cancel-button">
+      <button (click)="cancelarResultados()" class="btn cancelar">CANCELAR</button>
+    </div>
+  </div>
+  
